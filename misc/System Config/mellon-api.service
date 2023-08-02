@@ -1,0 +1,17 @@
+[Unit]
+Description=Mellon REST server
+After=network-online.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/mellon-api/mellon-api.pid
+TimeoutSec=300
+LimitRTPRIO=100
+ExecStart=/usr/bin/mellon-api -u mellon-api -g mellon-api -p /var/run/mellon-api/mellon-api.pid
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+TasksMax=infinity
+LimitCORE=infinity

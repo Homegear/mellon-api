@@ -1,0 +1,43 @@
+[
+  {
+    "type": "get",
+    "url": "/ping",
+    "title": "Check if the API is available.",
+    "version": "1.0.0",
+    "name": "Ping",
+    "group": "Ping",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "description": "<p>Checks if the API server is available. Returns the current UTC time as unix epoch timestamp.</p>",
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "success",
+            "description": "<p><code>true</code> when no errors occured.</p>"
+          },
+          {
+            "group": "200",
+            "type": "Number",
+            "optional": false,
+            "field": "result",
+            "description": "<p>The current UTC unix epoch.</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./src/REST/Ping.cpp",
+    "groupTitle": "Ping",
+    "sampleRequest": [
+      {
+        "url": "https://mellongw0.c0.hgcloud.net:443/ping"
+      }
+    ]
+  }
+]

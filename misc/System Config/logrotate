@@ -1,0 +1,12 @@
+/var/log/mellon-api/*.log /var/log/mellon-api/*.err {
+        missingok
+        rotate 2
+        compress
+        delaycompress
+        notifempty
+        size 10M
+        sharedscripts
+        postrotate
+        service mellon-api reload > /dev/null
+        endscript
+}
